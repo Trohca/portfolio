@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Трофим Боагий — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"><span>Смотреть</span></div>
+
+<!-- Пленочное зерно -->
+<div class="grain-overlay"></div>
+
+<!-- Фоновые цветные свечения -->
+<div class="bg-glows">
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+  <div class="glow-sphere glow-3"></div>
+</div>
+
+<!-- Парящая шапка из матового стекла -->
+<header>
+  <div class="header-inner">
+    
+    <!-- Логотип -->
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Трофим Боагий" class="site-logo">
+    </a>
+
+    <!-- Бургер-кнопка для мобильных устройств -->
+    <button class="burger-menu" id="burger-btn" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Навигация -->
+    <nav id="nav-menu">
+      <a href="#work" class="nav-link">Работы</a>
+      <a href="#about" class="nav-link">Обо мне</a>
+
+      <!-- Контакты и выпадающее меню -->
+      <div class="connect-container">
+        <a href="#" class="nav-link connect-trigger" id="connect-link">Контакты</a>
+        
+        <div class="connect-dropdown">
+          <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="connect-icon tg" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.017c.24-.213-.053-.334-.373-.12l-6.869 4.32-2.96-.924c-.643-.204-.658-.643.136-.953l11.57-4.46c.537-.204 1.006.12.822.764z"/></svg>
+            <span>Telegram</span>
+          </a>
+          
+          <a href="https://www.instagram.com/trohca/" target="_blank" rel="noopener noreferrer" class="connect-icon ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span>Instagram</span>
+          </a>
+          
+          <a href="https://www.facebook.com/profile.php?id=61566660621669" target="_blank" rel="noopener noreferrer" class="connect-icon fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Кнопка переключения темы -->
+      <button id="theme-toggle" class="theme-btn" aria-label="Сменить тему">
+        <div class="theme-btn-glow"></div>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+    </nav>
+  </div>
+</header>
+
+<section id="home">
+
+  <!-- Задний фон, участвующий в параллаксе -->
+  <div class="hero-bg" id="parallax-bg">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&auto=format&fit=crop&q=80" alt="Hero background">
+  </div>
+
+  <div class="hero-title-wrap">
+    <div class="hero-title">TROHCA</div>
+  </div>
+
+  <!-- Контейнер для увеличенного фото -->
+  <div class="hero-photo-container">
+    <div class="hero-photo" id="parallax-photo">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1000&auto=format&fit=crop&q=80&crop=faces&facepad=2.5" alt="Трофим Боагий">
+    </div>
+  </div>
+
+  <div class="hero-content fade-up delay-3">
+    <div class="hero-left">
+      <div class="eyebrow">
+        Графический дизайнер <span>/</span> Тирасполь <span>/</span> Удалённо
+      </div>
+      <h1 class="hero-name">
+        Трофим<br>Боагий
+      </h1>
+    </div>
+
+    <div class="hero-right">
+      <p>Брендинг, айдентика,<br>цифровой дизайн.<br>От концепции до<br>финального пикселя.</p>
+      <a href="#work" class="hero-scroll">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M7 1v12M1 8l6 6 6-6"/>
+        </svg>
+        Смотреть работы
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats fade-up delay-4">
+    <div class="stat">
+      <div class="stat-num">68+</div>
+      <div class="stat-label">Проектов</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Лет опыта</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Клиентов</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3×</div>
+      <div class="stat-label">Awwwards</div>
+    </div>
+  </div>
+
+</section>
+
+<section id="work">
+
+  <div class="section-header fade-up">
+    <h2 class="section-title">Избранные работы</h2>
+    <span class="section-meta">2021 — 2025</span>
+  </div>
+
+  <div class="bento-grid" id="gallery">
+
+    <div class="card c1 fade-up delay-1">
+      <img src="images/p1.jpg" alt="UI/UX Concept" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">UI/UX · Умный дом</div>
+        <div class="card-title">Glassmorphic интерфейс</div>
+      </div>
+    </div>
+
+    <div class="card c2 fade-up delay-2">
+      <img src="images/p2.jpg" alt="Art Poster" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">Арт-постер</div>
+        <div class="card-title">DREAM — Серия плакатов</div>
+      </div>
+    </div>
+
+    <div class="card c3 fade-up delay-2">
+      <img src="images/p3.jpg" alt="Minimal UI" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">Графика · Интерфейс</div>
+        <div class="card-title">Минималистичный UI</div>
+      </div>
+    </div>
+
+    <div class="card c4 fade-up delay-3">
+      <img src="images/p4.jpg" alt="Typography" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">Типографика</div>
+        <div class="card-title">Акцидентный шрифт</div>
+      </div>
+    </div>
+
+    <div class="card c5 fade-up delay-3">
+      <img src="images/p5.jpg" alt="Web Design" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">Веб-дизайн</div>
+        <div class="card-title">Премиальный сайт путешествий</div>
+      </div>
+    </div>
+
+    <div class="card c6 fade-up delay-4">
+      <img src="images/p6.jpg" alt="Fashion Poster" class="card-img">
+      <div class="card-info">
+        <div class="card-tag">Фэшн · Стритвир</div>
+        <div class="card-title">Fashion editorial постер</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+
+  <div class="section-header fade-up">
+    <h2 class="section-title">Обо мне</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-card fade-up delay-1">
+      <div class="about-label">Биография</div>
+      <div class="about-text">
+        <p>Я — Трофим Боагий, графический дизайнер с фокусом на визуальных системах, брендинге и цифровом дизайне. Развиваюсь в направлениях айдентики, типографики и концептуального визувала для технологических и креативных брендов.</p>
+        <p>Мой подход строится на чёткой идее: каждый элемент дизайна должен работать осознанно. Никаких лишних деталей — только то, что усиливает смысл.</p>
+        <p>Открыт к коллаборациям, фриланс-проектам и долгосрочному сотрудничеству с командами, которым важен результат.</p>
+      </div>
+      <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="about-email">
+        Написать в Telegram →
+      </a>
+    </div>
+
+    <div class="about-card fade-up delay-2">
+      <div class="about-label">Инструменты</div>
+      <div class="tools-grid">
+        <span class="tool-pill">Figma</span>
+        <span class="tool-pill">Illustrator</span>
+        <span class="tool-pill">Photoshop</span>
+        <span class="tool-pill">InDesign</span>
+        <span class="tool-pill">After Effects</span>
+        <span class="tool-pill">Blender</span>
+        <span class="tool-pill">Framer</span>
+        <span class="tool-pill">Notion</span>
+      </div>
+
+      <div class="about-label" style="margin-top: 32px;">Услуги</div>
+      <ul class="services-list">
+        <li>Брендинг и айдентика</li>
+        <li>Типографика и редизайн</li>
+        <li>Упаковка и печатный дизайн</li>
+        <li>Визуальные системы для UI</li>
+        <li>Моушн и анимация</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+
+    <div class="footer-cta fade-up">
+      <div class="footer-eyebrow">Новый проект?</div>
+      <h2 class="footer-heading">Давайте создадим что-то значимое.</h2>
+      <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="btn-tg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+        </svg>
+        Написать в Telegram
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Трофим Боагий. Все права защищены.</span>
+      <div class="social-links">
+        <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="social-link">Telegram</a>
+        <a href="https://www.instagram.com/trohca/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61566660621669" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // ── Custom cursor ──
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  // Отключаем кастомный курсор на мобильных устройствах, чтобы не было багов с тачем
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    dot.style.display = 'none';
+    ring.style.display = 'none';
+    document.body.style.cursor = 'default';
+  } else {
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top  = my + 'px';
+    });
+
+    (function loopCursor() {
+      rx += (mx - rx) * 0.10;
+      ry += (my - ry) * 0.10;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(loopCursor);
+    })();
+
+    document.querySelectorAll('#gallery .card').forEach(card => {
+      card.addEventListener('mouseenter', () => document.body.classList.add('on-card'));
+      card.addEventListener('mouseleave', () => document.body.classList.remove('on-card'));
+    });
+
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity = '0';
+      ring.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity = '1';
+      if (!document.body.classList.contains('on-card')) {
+        ring.style.opacity = '0';
+      }
+    });
+  }
+
+  // ── Мобильное меню (Бургер) ──
+  const burgerBtn = document.getElementById('burger-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link:not(.connect-trigger)');
+
+  burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+  });
+
+  // Закрытие меню при клике на ссылки
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      burgerBtn.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+
+  // ── Сверхплавный Многослойный Параллакс (Фото + Фон) ──
+  const bg = document.getElementById('parallax-bg');
+  const photo = document.getElementById('parallax-photo');
+  
+  let targetX = 0, targetY = 0;
+  let currentPhotoX = 0, currentPhotoY = 0;
+  let currentBgX = 0, currentBgY = 0;
+
+  // Включаем параллакс только на десктопах (мышь)
+  if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+    document.addEventListener('mousemove', (e) => {
+      targetX = (e.clientX / window.innerWidth) - 0.5;
+      targetY = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    function animateParallax() {
+      const targetPhotoX = targetX * 45;
+      const targetPhotoY = targetY * 45;
+      const targetBgX = targetX * -25;
+      const targetBgY = targetY * -25;
+
+      currentPhotoX += (targetPhotoX - currentPhotoX) * 0.05;
+      currentPhotoY += (targetPhotoY - currentPhotoY) * 0.05;
+      
+      currentBgX += (targetBgX - currentBgX) * 0.03;
+      currentBgY += (targetBgY - currentBgY) * 0.03;
+
+      const rotateX = currentPhotoY * -0.15;
+      const rotateY = currentPhotoX * 0.15;
+
+      if (photo) {
+        photo.style.transform = `translate3d(${currentPhotoX}px, ${currentPhotoY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+      if (bg) {
+        bg.style.transform = `translate3d(${currentBgX}px, ${currentBgY}px, 0) scale(1.06)`;
+      }
+
+      requestAnimationFrame(animateParallax);
+    }
+    requestAnimationFrame(animateParallax);
+
+    document.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+    });
+  }
+
+  // ── Выпадающий список «Контакты» ──
+  const connectContainer = document.querySelector('.connect-container');
+  const connectTrigger = document.getElementById('connect-link');
+
+  connectTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    connectContainer.classList.toggle('active');
+  });
+
+  connectContainer.addEventListener('mouseleave', () => {
+    setTimeout(() => {
+      if (!connectContainer.matches(':hover')) {
+        connectContainer.classList.remove('active');
+      }
+    }, 300);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!connectContainer.contains(e.target)) {
+      connectContainer.classList.remove('active');
+    }
+  });
+
+  // ── Переключатель темы ──
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.add('theme-transitioning');
+    themeToggle.classList.add('animating');
+    
+    document.body.classList.toggle('light-mode');
+    
+    if (document.body.classList.contains('light-mode')) {
+      localStorage.setItem('theme', 'light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    }
+
+    setTimeout(() => {
+      document.body.classList.remove('theme-transitioning');
+      themeToggle.classList.remove('animating');
+    }, 600);
+  });
+
+  // ── Intersection Observer для fade-up ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.animationPlayState = 'running';
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    if (!el.closest('#home')) {
+      el.style.animationPlayState = 'paused';
+    }
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
