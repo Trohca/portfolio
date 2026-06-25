@@ -443,7 +443,14 @@ footer { position: relative; z-index: 4; padding: 0 40px; border-top: 1px solid 
   .connect-container.active .connect-dropdown { display: flex; }
   .theme-btn { margin-left: 0; margin-top: 16px; }
 }
-
+.connect-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
 @media (max-width: 639px) {
   header { width: calc(100% - 24px); top: 10px; }
   .header-inner { padding: 0 20px; height: 56px; }
