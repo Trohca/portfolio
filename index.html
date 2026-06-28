@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Трофим Боагий — Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Трофим Боагий — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="cursor-dot"></div>
+<div id="cursor-triangle"></div>
 <div id="cursor-ring"><span>Смотреть</span></div>
 
 <!-- Пленочное зерно -->
@@ -40,6 +40,7 @@
     <!-- Навигация -->
     <nav id="nav-menu">
       <a href="#services-anchor" class="nav-link">Услуги</a>
+      <a href="#portfolio" class="nav-link">Портфолио</a>
       <a href="#about" class="nav-link">Обо мне</a>
 
       <!-- Контакты и выпадающее меню -->
@@ -165,6 +166,98 @@
   </div>
 </section>
 
+<!-- ══════════════ PORTFOLIO ══════════════ -->
+<section id="portfolio">
+
+  <div class="section-header fade-up">
+    <h2 class="section-title">Портфолио</h2>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card card-wide fade-up delay-1" onclick="openModal('lumina')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&auto=format&fit=crop&q=80" alt="Lumina Brand">
+      </div>
+      <div class="card-info">
+        <div class="card-category">Брендинг</div>
+        <div class="card-title">Lumina — Визуальная Система</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card fade-up delay-2" onclick="openModal('arktype')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=800&auto=format&fit=crop&q=80" alt="ArkType UI">
+      </div>
+      <div class="card-info">
+        <div class="card-category">UI / Дизайн-система</div>
+        <div class="card-title">ArkType Interface</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card fade-up delay-3" onclick="openModal('movenow')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&auto=format&fit=crop&q=80" alt="MoveNow App">
+      </div>
+      <div class="card-info">
+        <div class="card-category">Упаковка</div>
+        <div class="card-title">MoveNow Packaging</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card card-wide fade-up delay-2" onclick="openModal('flux')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=80" alt="Flux Motion">
+      </div>
+      <div class="card-info">
+        <div class="card-category">Моушн / Анимация</div>
+        <div class="card-title">Flux — Motion Identity</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card fade-up delay-1" onclick="openModal('norde')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&fit=crop&q=80" alt="Norde">
+      </div>
+      <div class="card-info">
+        <div class="card-category">Айдентика</div>
+        <div class="card-title">Norde Brand Identity</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card fade-up delay-2" onclick="openModal('typeset')">
+      <div class="card-glow"></div>
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80" alt="TypeSet">
+      </div>
+      <div class="card-info">
+        <div class="card-category">Типографика</div>
+        <div class="card-title">TypeSet Editorial</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ PORTFOLIO MODAL ══════════════ -->
+<div id="portfolio-modal" aria-modal="true" role="dialog">
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-window" id="modal-window">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-layout">
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+</div>
+
 <footer id="footer">
   <div class="footer-inner">
 
@@ -186,20 +279,20 @@
 </footer>
 
 <script>
-  // ── Custom cursor ──
-  const dot  = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
+  // ── Custom cursor (Triangle) ──
+  const triangle = document.getElementById('cursor-triangle');
+  const ring     = document.getElementById('cursor-ring');
   let mx = 0, my = 0, rx = 0, ry = 0;
 
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    dot.style.display = 'none';
+    triangle.style.display = 'none';
     ring.style.display = 'none';
     document.body.style.cursor = 'default';
   } else {
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top  = my + 'px';
+      triangle.style.left = mx + 'px';
+      triangle.style.top  = my + 'px';
     });
 
     (function loopCursor() {
@@ -211,14 +304,114 @@
     })();
 
     document.addEventListener('mouseleave', () => {
-      dot.style.opacity = '0';
+      triangle.style.opacity = '0';
       ring.style.opacity = '0';
     });
-    
     document.addEventListener('mouseenter', () => {
-      dot.style.opacity = '1';
+      triangle.style.opacity = '1';
     });
   }
+
+  // ── Portfolio Modal Data ──
+  const projects = {
+    lumina: {
+      title: 'Lumina — Визуальная Система',
+      category: 'Брендинг',
+      year: '2025',
+      description: 'Полный редизайн визуальной системы для технологического стартапа. Разработана модульная айдентика, шрифтовая пара и цветовая палитра, адаптированные для цифровых и печатных носителей.',
+      tools: ['Figma', 'Illustrator', 'InDesign'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&auto=format&fit=crop&q=80'
+    },
+    arktype: {
+      title: 'ArkType Interface',
+      category: 'UI / Дизайн-система',
+      year: '2025',
+      description: 'Проектирование компонентной дизайн-системы для SaaS-продукта. Более 120 компонентов, тёмная и светлая темы, адаптивные токены и полная документация в Figma.',
+      tools: ['Figma', 'Framer', 'Notion'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=800&auto=format&fit=crop&q=80'
+    },
+    movenow: {
+      title: 'MoveNow Packaging',
+      category: 'Упаковка',
+      year: '2024',
+      description: 'Дизайн упаковки для линейки спортивного питания. Концепт строится на динамичных диагоналях, контрастной типографике и текстурах, передающих ощущение скорости и энергии.',
+      tools: ['Illustrator', 'Photoshop', 'InDesign'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&auto=format&fit=crop&q=80'
+    },
+    flux: {
+      title: 'Flux — Motion Identity',
+      category: 'Моушн / Анимация',
+      year: '2024',
+      description: 'Разработка анимационной айдентики для медиа-студии. Логотип, стингеры, переходы и шаблоны для социальных сетей — всё выдержано в едином кинетическом языке.',
+      tools: ['After Effects', 'Illustrator', 'Blender'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=80'
+    },
+    norde: {
+      title: 'Norde Brand Identity',
+      category: 'Айдентика',
+      year: '2023',
+      description: 'Создание айдентики для скандинавского архитектурного бюро. Минималистичный логотип на основе геометрических форм, монохромная палитра и строгая сетка для всех носителей.',
+      tools: ['Figma', 'Illustrator'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&fit=crop&q=80'
+    },
+    typeset: {
+      title: 'TypeSet Editorial',
+      category: 'Типографика',
+      year: '2023',
+      description: 'Редизайн editorial-платформы с фокусом на типографику. Кастомная сетка, иерархия шрифтов, ритм строк — каждый элемент подчинён чёткой типографической системе.',
+      tools: ['Figma', 'InDesign', 'Photoshop'],
+      link: '#',
+      img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80'
+    }
+  };
+
+  // ── Modal Logic ──
+  const modal   = document.getElementById('portfolio-modal');
+  const overlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('modal-close');
+  const modalMedia   = document.getElementById('modal-media');
+  const modalContent = document.getElementById('modal-content');
+
+  function openModal(key) {
+    const p = projects[key];
+    if (!p) return;
+
+    // Build media
+    modalMedia.innerHTML = `<img src="${p.img}" alt="${p.title}">`;
+
+    // Build pills
+    const toolPills = p.tools.map(t => `<span class="modal-pill">${t}</span>`).join('');
+
+    // Build content
+    modalContent.innerHTML = `
+      <div class="modal-eyebrow">${p.category} — ${p.year}</div>
+      <h2 class="modal-title">${p.title}</h2>
+      <p class="modal-desc">${p.description}</p>
+      <div class="modal-tools-label">Инструменты</div>
+      <div class="modal-pills">${toolPills}</div>
+      <a href="${p.link}" class="modal-cta" target="_blank" rel="noopener noreferrer">
+        Смотреть проект
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    `;
+
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  overlay.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   // ── Мобильное меню (Бургер) ──
   const burgerBtn = document.getElementById('burger-btn');
@@ -318,7 +511,6 @@
   themeToggle.addEventListener('click', () => {
     document.body.classList.add('theme-transitioning');
     document.body.classList.add('theme-blur-peak'); // Пик размытия стекол
-    themeToggle.classList.add('animating');
     
     // Кратковременный всплеск блура на 250мс
     setTimeout(() => {
@@ -335,7 +527,6 @@
 
     setTimeout(() => {
       document.body.classList.remove('theme-transitioning');
-      themeToggle.classList.remove('animating');
     }, 700); // Тайминг полного морфинга
   });
 
