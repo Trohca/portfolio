@@ -61,44 +61,54 @@
 
     <!-- Навигация -->
     <nav id="nav-menu">
-      <a href="#services-anchor" class="nav-link">Услуги</a>
-      <a href="#portfolio" class="nav-link">Портфолио</a>
-      <a href="#about" class="nav-link">Обо мне</a>
+      <a href="#services-anchor" class="nav-link" data-i18n="nav_services">Услуги</a>
+      <a href="#portfolio" class="nav-link" data-i18n="nav_portfolio">Портфолио</a>
+      <a href="#about" class="nav-link" data-i18n="nav_about">Обо мне</a>
 
       <!-- Мультиязычный переключатель (8 языков) -->
-      <div class="lang-container">
-        <a class="nav-link lang-trigger">🌐 <span id="current-lang">RU</span></a>
+      <div class="lang-container" id="lang-container">
+        <a class="nav-link lang-trigger" id="lang-trigger">🌐 <span id="current-lang">RU</span></a>
         <div class="lang-dropdown">
-          <a class="lang-item active" onclick="changeLang('RU')">🇷🇺 RU</a>
-          <a class="lang-item" onclick="changeLang('EN')">🇬🇧 EN</a>
-          <a class="lang-item" onclick="changeLang('RO')">🇷🇴 RO</a>
-          <a class="lang-item" onclick="changeLang('ZH')">🇨🇳 中文</a>
-          <a class="lang-item" onclick="changeLang('ES')">🇪🇸 ES</a>
-          <a class="lang-item" onclick="changeLang('PT')">🇵🇹 PT</a>
-          <a class="lang-item" onclick="changeLang('DE')">🇩🇪 DE</a>
-          <a class="lang-item" onclick="changeLang('FR')">🇫🇷 FR</a>
+          <a class="lang-item active" data-lang="RU">🇷🇺 RU</a>
+          <a class="lang-item" data-lang="EN">🇬🇧 EN</a>
+          <a class="lang-item" data-lang="RO">🇷🇴 RO</a>
+          <a class="lang-item" data-lang="ZH">🇨🇳 中文</a>
+          <a class="lang-item" data-lang="ES">🇪🇸 ES</a>
+          <a class="lang-item" data-lang="PT">🇵🇹 PT</a>
+          <a class="lang-item" data-lang="DE">🇩🇪 DE</a>
+          <a class="lang-item" data-lang="FR">🇫🇷 FR</a>
         </div>
       </div>
 
       <!-- Контакты и выпадающее меню -->
       <div class="connect-container">
-        <a href="#" class="nav-link connect-trigger" id="connect-link">Контакты</a>
+        <a href="#" class="nav-link connect-trigger" id="connect-link" data-i18n="nav_contacts">Контакты</a>
         
         <div class="connect-dropdown">
           <div class="connect-dropdown-inner">
             <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="connect-icon tg" aria-label="Telegram">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.017c.24-.213-.053-.334-.373-.12l-6.869 4.32-2.96-.924c-.643-.204-.658-.643.136-.953l11.57-4.46c.537-.204 1.006.12.822.764z"/></svg>
-              <span>Telegram</span>
+              <span data-i18n="connect_telegram">Telegram</span>
             </a>
 
             <a href="https://www.instagram.com/trohca/" target="_blank" rel="noopener noreferrer" class="connect-icon ig" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              <span>Instagram</span>
+              <span data-i18n="connect_instagram">Instagram</span>
             </a>
 
             <a href="https://www.facebook.com/profile.php?id=61566660621669" target="_blank" rel="noopener noreferrer" class="connect-icon fb" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              <span>Facebook</span>
+              <span data-i18n="connect_facebook">Facebook</span>
+            </a>
+
+            <a href="https://wa.me/37377752130" target="_blank" rel="noopener noreferrer" class="connect-icon wa" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 0C5.44 0 .1 5.34.1 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.24-1.64a11.9 11.9 0 0 0 5.8 1.48h.01c6.6 0 11.95-5.34 11.95-11.94 0-3.19-1.24-6.19-3.5-8.45A11.87 11.87 0 0 0 12.04 0zm0 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.7.97.99-3.6-.24-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.13 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.45 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46a8.86 8.86 0 0 1-1.64-2.04c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.57-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+              <span data-i18n="connect_whatsapp">WhatsApp</span>
+            </a>
+
+            <a href="mailto:boagiitrofim@gmail.com" class="connect-icon mail" aria-label="E-mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              <span data-i18n="connect_email">E-mail</span>
             </a>
           </div>
         </div>
@@ -137,44 +147,44 @@
   <div class="hero-stats fade-up delay-4">
     <div class="stat">
       <div class="stat-num">68+</div>
-      <div class="stat-label">Проектов</div>
+      <div class="stat-label" data-i18n="stat_projects">Проектов</div>
     </div>
     <div class="stat">
       <div class="stat-num">7</div>
-      <div class="stat-label">Лет опыта</div>
+      <div class="stat-label" data-i18n="stat_experience">Лет опыта</div>
     </div>
     <div class="stat">
       <div class="stat-num">14</div>
-      <div class="stat-label">Клиентов</div>
+      <div class="stat-label" data-i18n="stat_clients">Клиентов</div>
     </div>
     <div class="stat">
       <div class="stat-num">3×</div>
-      <div class="stat-label">Awwwards</div>
+      <div class="stat-label" data-i18n="stat_awwwards">Awwwards</div>
     </div>
   </div>
 </section>
 
 <section id="about">
   <div class="section-header fade-up">
-    <h2 class="section-title">Обо мне</h2>
+    <h2 class="section-title" data-i18n="about_title">Обо мне</h2>
   </div>
 
   <div class="about-grid">
     <div class="about-card fade-up delay-1">
-      <div class="about-label">Обо мне</div>
+      <div class="about-label" data-i18n="about_label_about">Обо мне</div>
       <div class="about-text">
-        <p>Я — Трофим Боагий, графический дизайнер с фокусом на визуальных системах, брендинге и цифровом дизайне. Развиваюсь в направлениях айдентики, типографики и концептуального визувала для технологических и креативных брендов.</p>
-        <p>Мой подход строится на чёткой идее: каждый элемент дизайна должен работать осознанно. Никаких лишних деталей — только то, что усиливает смысл.</p>
-        <p>Открыт к коллаборациям, фриланс-проектам и долгосрочному сотрудничеству с командами, которым важен результат.</p>
+        <p data-i18n="about_text1">Я — Трофим Боагий, дизайнер, проектирующий визуальные системы и интерфейсы. Работаю на стыке брендинга, типографики и UI/UX — там, где айдентика бренда становится частью цифрового продукта.</p>
+        <p data-i18n="about_text2">Мой подход: сначала структура и логика интерфейса, затем форма. Каждая система — сетка, шрифтовая пара, компонентная библиотека — строится так, чтобы бренд одинаково уверенно звучал и на экране, и в печати.</p>
+        <p data-i18n="about_text3">Открыт к коллаборациям с продуктовыми командами и брендами, которым важны согласованность и внимание к деталям на каждом уровне — от логотипа до последнего пикселя интерфейса.</p>
       </div>
     </div>
 
     <div class="about-card fade-up delay-2" id="services-anchor">
-      <div class="about-label">Инструменты</div>
+      <div class="about-label" data-i18n="about_label_tools">Инструменты</div>
       <div class="tools-grid">
         <span class="tool-pill">Figma</span>
-        <span class="tool-pill">Illustrator</span>
         <span class="tool-pill">Photoshop</span>
+        <span class="tool-pill">Illustrator</span>
         <span class="tool-pill">InDesign</span>
         <span class="tool-pill">After Effects</span>
         <span class="tool-pill">Blender</span>
@@ -182,13 +192,13 @@
         <span class="tool-pill">Notion</span>
       </div>
 
-      <div class="about-label" style="margin-top: 32px;">Услуги</div>
+      <div class="about-label" style="margin-top: 32px;" data-i18n="about_label_services">Услуги</div>
       <ul class="services-list">
-        <li>Брендинг и айдентика</li>
-        <li>Типографика и редизайн</li>
-        <li>Упаковка и печатный дизайн</li>
-        <li>Visual systems for UI</li>
-        <li>Моушн и анимация</li>
+        <li data-i18n="service_1">Брендинг и айдентика</li>
+        <li data-i18n="service_2">Проектирование UI/UX</li>
+        <li data-i18n="service_3">Дизайн-системы и компоненты</li>
+        <li data-i18n="service_4">Типографика и редизайн</li>
+        <li data-i18n="service_5">Моушн и анимация</li>
       </ul>
     </div>
   </div>
@@ -197,76 +207,14 @@
 <!-- Портфолио -->
 <section id="portfolio">
   <div class="section-header fade-up">
-    <h2 class="section-title">Портфолио</h2>
+    <h2 class="section-title" data-i18n="portfolio_title">Портфолио</h2>
   </div>
 
-  <div class="portfolio-grid">
-    <div class="portfolio-card card-wide fade-up delay-1" onclick="openModal('lumina')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&auto=format&fit=crop&q=80" alt="Lumina Brand">
-      </div>
-      <div class="card-info">
-        <div class="card-category">Брендинг</div>
-        <div class="card-title">Lumina — Визуальная Система</div>
-      </div>
-    </div>
+  <!-- Табы категорий: 6 категорий (п.3 ТЗ) -->
+  <div class="portfolio-tabs fade-up" id="portfolio-tabs"></div>
 
-    <div class="portfolio-card fade-up delay-2" onclick="openModal('arktype')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=800&auto=format&fit=crop&q=80" alt="ArkType UI">
-      </div>
-      <div class="card-info">
-        <div class="card-category">UI / Дизайн-система</div>
-        <div class="card-title">ArkType Interface</div>
-      </div>
-    </div>
-
-    <div class="portfolio-card fade-up delay-3" onclick="openModal('movenow')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&auto=format&fit=crop&q=80" alt="MoveNow App">
-      </div>
-      <div class="card-info">
-        <div class="card-category">Упаковка</div>
-        <div class="card-title">MoveNow Packaging</div>
-      </div>
-    </div>
-
-    <div class="portfolio-card card-wide fade-up delay-2" onclick="openModal('flux')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=80" alt="Flux Motion">
-      </div>
-      <div class="card-info">
-        <div class="card-category">Моушн / Анимация</div>
-        <div class="card-title">Flux — Motion Identity</div>
-      </div>
-    </div>
-
-    <div class="portfolio-card fade-up delay-1" onclick="openModal('norde')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&fit=crop&q=80" alt="Norde">
-      </div>
-      <div class="card-info">
-        <div class="card-category">Айдентика</div>
-        <div class="card-title">Norde Brand Identity</div>
-      </div>
-    </div>
-
-    <div class="portfolio-card fade-up delay-2" onclick="openModal('typeset')">
-      <div class="card-glow"></div>
-      <div class="card-media">
-        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80" alt="TypeSet">
-      </div>
-      <div class="card-info">
-        <div class="card-category">Типографика</div>
-        <div class="card-title">TypeSet Editorial</div>
-      </div>
-    </div>
-  </div>
+  <!-- Сетка карточек: 6 категорий × 5 карточек-заглушек, для тестирования свайпа/листания -->
+  <div class="portfolio-grid" id="portfolio-grid"></div>
 </section>
 
 <!-- Модальное окно портфолио -->
@@ -275,6 +223,12 @@
   <div class="modal-window" id="modal-window">
     <button class="modal-close" id="modal-close" aria-label="Закрыть">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="modal-nav prev" id="modal-prev" aria-label="Предыдущая работа">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="modal-nav next" id="modal-next" aria-label="Следующая работа">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
     <div class="modal-layout">
       <div class="modal-media" id="modal-media"></div>
@@ -286,22 +240,230 @@
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-cta fade-up">
-      <div class="footer-eyebrow">Новый проект?</div>
-      <h2 class="footer-heading">Давайте создадим что-то значимое.</h2>
+      <div class="footer-eyebrow" data-i18n="footer_eyebrow">Новый проект?</div>
+      <h2 class="footer-heading" data-i18n="footer_heading">Давайте создадим что-то значимое.</h2>
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Трофим Боагий. Все права защищены.</span>
       <div class="social-links">
-        <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="social-link">Telegram</a>
-        <a href="https://www.instagram.com/trohca/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=61566660621669" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+        <a href="https://t.me/TROHCA" target="_blank" rel="noopener noreferrer" class="social-link tg" data-i18n="connect_telegram">Telegram</a>
+        <a href="https://www.instagram.com/trohca/" target="_blank" rel="noopener noreferrer" class="social-link ig" data-i18n="connect_instagram">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61566660621669" target="_blank" rel="noopener noreferrer" class="social-link fb" data-i18n="connect_facebook">Facebook</a>
+        <a href="https://wa.me/37377752130" target="_blank" rel="noopener noreferrer" class="social-link wa" data-i18n="connect_whatsapp">WhatsApp</a>
+        <a href="mailto:boagiitrofim@gmail.com" class="social-link mail" data-i18n="connect_email">E-mail</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
+  /* ═══════════════════════════════════════════════
+      Мультиязычность (locales.json, без перезагрузки, localStorage)
+  ═══════════════════════════════════════════════ */
+  let LOCALES = null;
+  let currentLang = localStorage.getItem('lang') || 'RU';
+
+  async function loadLocales() {
+    try {
+      const res = await fetch('locales.json');
+      LOCALES = await res.json();
+    } catch (err) {
+      console.error('Не удалось загрузить locales.json (при открытии файла напрямую через file:// браузер блокирует fetch — запустите сайт через локальный сервер).', err);
+      LOCALES = null;
+    }
+  }
+
+  function t(key) {
+    if (!LOCALES) return null;
+    const dict = LOCALES[currentLang] || LOCALES.RU;
+    return dict[key] || (LOCALES.RU && LOCALES.RU[key]) || null;
+  }
+
+  function applyTranslations() {
+    if (!LOCALES) return;
+    document.documentElement.lang = currentLang.toLowerCase();
+    document.getElementById('current-lang').innerText = currentLang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const val = t(el.getAttribute('data-i18n'));
+      if (val) el.textContent = val;
+    });
+
+    document.querySelectorAll('.lang-item').forEach(item => {
+      item.classList.toggle('active', item.getAttribute('data-lang') === currentLang);
+    });
+
+    renderPortfolioTabs();
+    renderPortfolioGrid();
+  }
+
+  function changeLang(langCode) {
+    currentLang = langCode;
+    localStorage.setItem('lang', langCode);
+    applyTranslations();
+  }
+
+  document.querySelectorAll('.lang-item').forEach(item => {
+    item.addEventListener('click', () => changeLang(item.getAttribute('data-lang')));
+  });
+
+  /* ═══════════════════════════════════════════════
+      Портфолио: 6 категорий × 5 карточек-заглушек (п.3 ТЗ)
+      Замените плейсхолдеры реальными работами: title/img/description/tools по мере готовности.
+  ═══════════════════════════════════════════════ */
+  const PORTFOLIO_CATEGORIES = [
+    { key: 'infographics', labelKey: 'cat_infographics' },
+    { key: 'logo',         labelKey: 'cat_logo' },
+    { key: 'banners',      labelKey: 'cat_banners' },
+    { key: 'posters',      labelKey: 'cat_posters' },
+    { key: 'booklets',     labelKey: 'cat_booklets' },
+    { key: 'uiux',         labelKey: 'cat_uiux' }
+  ];
+  const ITEMS_PER_CATEGORY = 5;
+
+  // Плоский список всех карточек-заглушек: { id, category, index }
+  const portfolioItems = [];
+  PORTFOLIO_CATEGORIES.forEach(cat => {
+    for (let i = 1; i <= ITEMS_PER_CATEGORY; i++) {
+      portfolioItems.push({ id: `${cat.key}-${i}`, category: cat.key, index: i });
+    }
+  });
+
+  let activeCategory = 'infographics';
+
+  function categoryLabel(catKey) {
+    const cat = PORTFOLIO_CATEGORIES.find(c => c.key === catKey);
+    return (cat && t(cat.labelKey)) || catKey;
+  }
+
+  function renderPortfolioTabs() {
+    const wrap = document.getElementById('portfolio-tabs');
+    wrap.innerHTML = PORTFOLIO_CATEGORIES.map(cat => `
+      <button class="portfolio-tab${cat.key === activeCategory ? ' active' : ''}" data-cat="${cat.key}">${categoryLabel(cat.key)}</button>
+    `).join('');
+
+    wrap.querySelectorAll('.portfolio-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCategory = btn.getAttribute('data-cat');
+        renderPortfolioTabs();
+        filterPortfolioGrid();
+      });
+    });
+  }
+
+  function renderPortfolioGrid() {
+    const grid = document.getElementById('portfolio-grid');
+    grid.innerHTML = portfolioItems.map(item => `
+      <div class="portfolio-card placeholder fade-up" data-id="${item.id}" data-category="${item.category}">
+        <div class="placeholder-inner">
+          <div class="placeholder-num">${String(item.index).padStart(2, '0')}</div>
+          <div class="placeholder-cat">${categoryLabel(item.category)}</div>
+        </div>
+      </div>
+    `).join('');
+
+    grid.querySelectorAll('.portfolio-card').forEach(card => {
+      card.addEventListener('click', () => openModal(card.getAttribute('data-id')));
+      // Заново запускаем fade-up анимацию для перерисованных карточек
+      card.style.animationPlayState = 'running';
+    });
+
+    filterPortfolioGrid();
+  }
+
+  function filterPortfolioGrid() {
+    document.querySelectorAll('#portfolio-grid .portfolio-card').forEach(card => {
+      card.classList.toggle('is-hidden', card.getAttribute('data-category') !== activeCategory);
+    });
+  }
+
+  /* ═══════════════════════════════════════════════
+      Модальное окно портфолио: листание только внутри категории + свайп на мобильных
+  ═══════════════════════════════════════════════ */
+  const modal   = document.getElementById('portfolio-modal');
+  const overlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('modal-close');
+  const prevBtn  = document.getElementById('modal-prev');
+  const nextBtn  = document.getElementById('modal-next');
+  const modalWindow  = document.getElementById('modal-window');
+  const modalMedia   = document.getElementById('modal-media');
+  const modalContent = document.getElementById('modal-content');
+
+  let currentItemId = null;
+
+  function itemsInCategory(catKey) {
+    return portfolioItems.filter(it => it.category === catKey);
+  }
+
+  function renderModalItem(item) {
+    modalMedia.innerHTML = `<div class="placeholder-num">${String(item.index).padStart(2, '0')}</div>`;
+    modalContent.innerHTML = `
+      <div class="modal-eyebrow">${categoryLabel(item.category)}</div>
+      <h2 class="modal-title">${(t('placeholder_label') || 'Work')} ${item.index}</h2>
+      <p class="modal-desc">${t('placeholder_desc') || ''}</p>
+    `;
+  }
+
+  function openModal(id) {
+    const item = portfolioItems.find(it => it.id === id);
+    if (!item) return;
+    currentItemId = id;
+    renderModalItem(item);
+
+    modal.classList.remove('is-closing');
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeModal() {
+    modal.classList.add('is-closing');
+    setTimeout(() => {
+      modal.classList.remove('active');
+      modal.classList.remove('is-closing');
+      document.body.classList.remove('no-scroll');
+    }, 350);
+  }
+
+  function stepModal(direction) {
+    const item = portfolioItems.find(it => it.id === currentItemId);
+    if (!item) return;
+    const siblings = itemsInCategory(item.category);
+    const idx = siblings.findIndex(it => it.id === currentItemId);
+    const nextIdx = (idx + direction + siblings.length) % siblings.length;
+    currentItemId = siblings[nextIdx].id;
+    renderModalItem(siblings[nextIdx]);
+  }
+
+  overlay.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', () => stepModal(-1));
+  nextBtn.addEventListener('click', () => stepModal(1));
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') stepModal(-1);
+    if (e.key === 'ArrowRight') stepModal(1);
+  });
+
+  // Свайп-листание карточек в модальном окне (мобильные устройства, п.3 ТЗ)
+  let touchStartX = 0, touchStartY = 0, touchActive = false;
+  modalWindow.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchActive = true;
+  }, { passive: true });
+
+  modalWindow.addEventListener('touchend', e => {
+    if (!touchActive) return;
+    touchActive = false;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    const SWIPE_THRESHOLD = 50;
+    if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      stepModal(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
   // Кастомный курсор с плавным сглаживанием
   const triangle = document.getElementById('cursor-triangle');
   const ring     = document.getElementById('cursor-ring');
@@ -349,107 +511,10 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Логика работы языкового переключателя
-  function changeLang(langCode) {
-    document.getElementById('current-lang').innerText = langCode;
-    document.querySelectorAll('.lang-item').forEach(item => {
-      item.classList.remove('active');
-      if(item.innerText.includes(langCode)) {
-        item.classList.add('active');
-      }
-    });
-  }
-
-  // Данные для модального окна портфолио
-  const projects = {
-    lumina: {
-      title: 'Lumina — Визуальная Система',
-      category: 'Брендинг',
-      description: 'Полный редизайн визуальной системы для технологического стартапа. Разработана модульная айдентика, шрифтовая пара и цветовая палитра, адаптированные для цифровых и печатных носителей.',
-      tools: ['Figma', 'Illustrator', 'InDesign'],
-      img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&auto=format&fit=crop&q=80'
-    },
-    arktype: {
-      title: 'ArkType Interface',
-      category: 'UI / Дизайн-система',
-      description: 'Проектирование компонентной дизайн-системы для SaaS-продукта. Более 120 компонентов, тёмная и светлая темы, адаптивные токены и полная документация в Figma.',
-      tools: ['Figma', 'Framer', 'Notion'],
-      img: 'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=800&auto=format&fit=crop&q=80'
-    },
-    movenow: {
-      title: 'MoveNow Packaging',
-      category: 'Упаковка',
-      description: 'Дизайн упаковки для линейки спортивного питания. Концепт строится на динамичных диагоналях, контрастной типографике и текстурах, передающих ощущение скорости и энергии.',
-      tools: ['Illustrator', 'Photoshop', 'InDesign'],
-      img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&auto=format&fit=crop&q=80'
-    },
-    flux: {
-      title: 'Flux — Motion Identity',
-      category: 'Моушн / Анимация',
-      description: 'Разработка анимационной айдентики для медиа-студии. Логотип, стингеры, переходы и шаблоны для социальных сетей — всё выдержано в едином кинетическом языке.',
-      tools: ['After Effects', 'Illustrator', 'Blender'],
-      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=80'
-    },
-    norde: {
-      title: 'Norde Brand Identity',
-      category: 'Айдентика',
-      description: 'Создание айдентики для скандинавского архитектурного бюро. Минималистичный логотип на основе геометрических форм, монохромная палитра и строгая сетка для всех носителей.',
-      tools: ['Figma', 'Illustrator'],
-      img: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&fit=crop&q=80'
-    },
-    typeset: {
-      title: 'TypeSet Editorial',
-      category: 'Типографика',
-      description: 'Редизайн editorial-платформы с фокусом на типографику. Кастомная сетка, иерархия шрифтов, ритм строк — каждый элемент подчинён чёткой типографической системе.',
-      tools: ['Figma', 'InDesign', 'Photoshop'],
-      img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80'
-    }
-  };
-
-  // Логика управления модальным окном
-  const modal   = document.getElementById('portfolio-modal');
-  const overlay = document.getElementById('modal-overlay');
-  const closeBtn = document.getElementById('modal-close');
-  const modalMedia   = document.getElementById('modal-media');
-  const modalContent = document.getElementById('modal-content');
-
-  function openModal(key) {
-    const p = projects[key];
-    if (!p) return;
-
-    modalMedia.innerHTML = `<img src="${p.img}" alt="${p.title}">`;
-    const toolPills = p.tools.map(t => `<span class="modal-pill">${t}</span>`).join('');
-
-    modalContent.innerHTML = `
-      <div class="modal-eyebrow">${p.category}</div>
-      <h2 class="modal-title">${p.title}</h2>
-      <p class="modal-desc">${p.description}</p>
-      <div class="modal-tools-label">Инструменты</div>
-      <div class="modal-pills">${toolPills}</div>
-    `;
-
-    modal.classList.remove('is-closing');
-    modal.classList.add('active');
-    document.body.classList.add('no-scroll');
-  }
-
-  function closeModal() {
-    modal.classList.add('is-closing');
-    setTimeout(() => {
-      modal.classList.remove('active');
-      modal.classList.remove('is-closing');
-      document.body.classList.remove('no-scroll');
-    }, 350);
-  }
-
-  overlay.addEventListener('click', closeModal);
-  closeBtn.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
   // Мобильное меню (Бургер)
   const burgerBtn = document.getElementById('burger-btn');
   const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link:not(.connect-trigger)');
+  const navLinks = document.querySelectorAll('.nav-link:not(.connect-trigger):not(.lang-trigger)');
 
   burgerBtn.addEventListener('click', () => {
     burgerBtn.classList.toggle('active');
@@ -463,6 +528,16 @@
       navMenu.classList.remove('active');
       document.body.classList.remove('no-scroll');
     });
+  });
+
+  // Языковой переключатель на мобильных — раскрывается по тапу (как аккордеон «Контакты»)
+  const langContainer = document.getElementById('lang-container');
+  const langTrigger = document.getElementById('lang-trigger');
+  langTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      langContainer.classList.toggle('active');
+    }
   });
 
   // Многослойный инерционный Параллакс
@@ -529,6 +604,9 @@
     if (!connectContainer.contains(e.target)) {
       connectContainer.classList.remove('active');
     }
+    if (!langContainer.contains(e.target)) {
+      langContainer.classList.remove('active');
+    }
   });
 
   // Переключатель цветовой темы
@@ -568,12 +646,18 @@
     });
   }, { threshold: 0.05 });
 
-  document.querySelectorAll('.fade-up').forEach(el => {
-    if (!el.closest('#home')) {
-      el.style.animationPlayState = 'paused';
-    }
-    observer.observe(el);
-  });
+  function observeFadeUps() {
+    document.querySelectorAll('.fade-up').forEach(el => {
+      if (!el.closest('#home') && el.style.animationPlayState !== 'running') {
+        el.style.animationPlayState = 'paused';
+      }
+      observer.observe(el);
+    });
+  }
+  observeFadeUps();
+
+  // Инициализация: локали → портфолио/переводы
+  loadLocales().then(applyTranslations);
 </script>
 
 </body>
