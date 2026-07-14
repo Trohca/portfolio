@@ -1,0 +1,198 @@
+{
+  "_readme": "Добавляйте новые работы, просто дописывая объект в массив 'projects' — HTML менять не нужно. category должен совпадать с одним из ключей cat_* в locales.json. size управляет размером карточки в мозаичной сетке: 'xl' (широкая+высокая), 'wide' (широкая), 'tall' (узкая+высокая), 'normal' (стандартная). translations — переводы конкретной работы; сейчас заполнены RU и EN, остальные 6 языков сайта автоматически используют EN как резерв (можно дописать любой из кодов языка — RO, ZH, ES, PT, DE, FR — и он будет использован вместо резерва).",
+
+  "projects": [
+    {
+      "id": "logo-01",
+      "category": "logo",
+      "year": "2024",
+      "client": "Noir Studio",
+      "tools": ["Illustrator", "Figma"],
+      "size": "xl",
+      "images": [
+        "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1800&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Noir Studio", "subtitle": "Айдентика для арт-студии", "description": "Минималистичный монограммный знак и гибкая система для творческой студии — от визиток до motion-заставки на сайте." },
+        "EN": { "title": "Noir Studio", "subtitle": "Identity for an art studio", "description": "A minimal monogram mark and a flexible system for a creative studio — from business cards to a motion sting for the website." }
+      }
+    },
+    {
+      "id": "uiux-01",
+      "category": "uiux",
+      "year": "2025",
+      "client": "Flowpay",
+      "tools": ["Figma", "Framer"],
+      "size": "wide",
+      "images": [
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1800&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Flowpay", "subtitle": "Мобильный банкинг", "description": "Полный редизайн приложения для платежей: новая дизайн-система, упрощённые сценарии переводов и тёмная тема." },
+        "EN": { "title": "Flowpay", "subtitle": "Mobile banking app", "description": "A full redesign of a payments app: a new design system, simplified transfer flows and a dark theme." }
+      }
+    },
+    {
+      "id": "posters-01",
+      "category": "posters",
+      "year": "2023",
+      "client": "Jazz Nights Festival",
+      "tools": ["Photoshop", "InDesign"],
+      "size": "tall",
+      "images": [
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Jazz Nights", "subtitle": "Афиша фестиваля", "description": "Серия афиш для джазового фестиваля: контрастная типографика и приглушённая палитра, отсылающая к винтажным пластинкам." },
+        "EN": { "title": "Jazz Nights", "subtitle": "Festival poster series", "description": "A poster series for a jazz festival: bold typography and a muted palette referencing vintage vinyl sleeves." }
+      }
+    },
+    {
+      "id": "banners-01",
+      "category": "banners",
+      "year": "2024",
+      "client": "Solstice Sneakers",
+      "tools": ["Photoshop", "After Effects"],
+      "size": "normal",
+      "images": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Solstice Drop", "subtitle": "Рекламные баннеры", "description": "Комплект веб-баннеров для запуска коллекции кроссовок: динамичная композиция и анимированные версии для соцсетей." },
+        "EN": { "title": "Solstice Drop", "subtitle": "Ad banner set", "description": "A set of web banners for a sneaker collection launch: dynamic composition plus animated cuts for social." }
+      }
+    },
+    {
+      "id": "infographics-01",
+      "category": "infographics",
+      "year": "2025",
+      "client": "GreenGrid Energy",
+      "tools": ["Illustrator", "Figma"],
+      "size": "wide",
+      "images": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1800&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "GreenGrid", "subtitle": "Инфографика для отчёта", "description": "Визуализация данных о потреблении энергии для годового отчёта: понятные диаграммы в фирменной палитре бренда." },
+        "EN": { "title": "GreenGrid", "subtitle": "Annual report infographics", "description": "Data visualisation of energy usage for an annual report: clear charts in the brand's own colour palette." }
+      }
+    },
+    {
+      "id": "booklets-01",
+      "category": "booklets",
+      "year": "2023",
+      "client": "Marea Hotel",
+      "tools": ["InDesign", "Photoshop"],
+      "size": "tall",
+      "images": [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Marea Hotel", "subtitle": "Буклет отеля", "description": "Имиджевый буклет для прибрежного отеля: плотная сетка, спокойная типографика и акцент на фотографии интерьеров." },
+        "EN": { "title": "Marea Hotel", "subtitle": "Hotel brochure", "description": "A brand brochure for a seaside hotel: a tight grid, calm typography and a focus on interior photography." }
+      }
+    },
+    {
+      "id": "logo-02",
+      "category": "logo",
+      "year": "2022",
+      "client": "Ember Coffee",
+      "tools": ["Illustrator"],
+      "size": "normal",
+      "images": [
+        "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Ember Coffee", "subtitle": "Лого кофейни", "description": "Тёплый, рукописный знак для сети кофеен с акцентом на упаковку и меловые вывески." },
+        "EN": { "title": "Ember Coffee", "subtitle": "Coffee shop logo", "description": "A warm, hand-drawn mark for a coffee chain, built around packaging and chalkboard signage." }
+      }
+    },
+    {
+      "id": "uiux-02",
+      "category": "uiux",
+      "year": "2024",
+      "client": "Studio OS",
+      "tools": ["Figma", "Framer", "Notion"],
+      "size": "normal",
+      "images": [
+        "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Studio OS", "subtitle": "SaaS-панель управления", "description": "Дизайн-система и панель управления проектами для креативных студий с гибкими виджетами и тёмной темой." },
+        "EN": { "title": "Studio OS", "subtitle": "SaaS dashboard", "description": "A design system and project dashboard for creative studios, with flexible widgets and a dark theme." }
+      }
+    },
+    {
+      "id": "posters-02",
+      "category": "posters",
+      "year": "2024",
+      "client": "Kinograd Cinema",
+      "tools": ["Photoshop", "Illustrator"],
+      "size": "wide",
+      "images": [
+        "https://images.unsplash.com/photo-1489599162946-97285f9d6b57?w=1200&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1489599162946-97285f9d6b57?w=1800&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Kinograd", "subtitle": "Афиша кинофестиваля", "description": "Ключевой визуал ретроспективы авторского кино: зернистая плёночная текстура и сдержанная цветокоррекция." },
+        "EN": { "title": "Kinograd", "subtitle": "Film festival key art", "description": "Key art for an arthouse retrospective: grainy film texture and restrained colour grading." }
+      }
+    },
+    {
+      "id": "banners-02",
+      "category": "banners",
+      "year": "2023",
+      "client": "Northline Travel",
+      "tools": ["Photoshop", "Figma"],
+      "size": "tall",
+      "images": [
+        "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Northline", "subtitle": "Промо-баннеры", "description": "Сезонная баннерная кампания для туристического агентства с акцентом на пейзажную фотографию." },
+        "EN": { "title": "Northline", "subtitle": "Promo banner set", "description": "A seasonal banner campaign for a travel agency, built around landscape photography." }
+      }
+    },
+    {
+      "id": "infographics-02",
+      "category": "infographics",
+      "year": "2023",
+      "client": "Pulse Health",
+      "tools": ["Illustrator"],
+      "size": "normal",
+      "images": [
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Pulse Health", "subtitle": "Медицинская инфографика", "description": "Серия карточек для приложения о здоровье, объясняющих сложные показатели простым визуальным языком." },
+        "EN": { "title": "Pulse Health", "subtitle": "Medical infographics", "description": "A set of cards for a health app, explaining complex metrics through a simple visual language." }
+      }
+    },
+    {
+      "id": "booklets-02",
+      "category": "booklets",
+      "year": "2025",
+      "client": "Atlas Architects",
+      "tools": ["InDesign"],
+      "size": "normal",
+      "images": [
+        "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1000&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&auto=format&fit=crop&q=80"
+      ],
+      "translations": {
+        "RU": { "title": "Atlas", "subtitle": "Портфолио бюро", "description": "Портфолио-буклет архитектурного бюро: крупная сетка, много воздуха и акцент на чертежах." },
+        "EN": { "title": "Atlas", "subtitle": "Studio portfolio book", "description": "A portfolio booklet for an architecture studio: a large grid, generous whitespace and a focus on drawings." }
+      }
+    }
+  ]
+}
