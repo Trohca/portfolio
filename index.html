@@ -180,16 +180,15 @@
     </div>
 
     <div class="about-card fade-up delay-2" id="services-anchor">
+      <h3 class="about-card-title" data-i18n="services_section_title">Услуги</h3>
+
       <div class="about-label" data-i18n="about_label_tools">Инструменты</div>
       <div class="tools-grid">
         <span class="tool-pill">Figma</span>
         <span class="tool-pill">Photoshop</span>
         <span class="tool-pill">Illustrator</span>
         <span class="tool-pill">InDesign</span>
-        <span class="tool-pill">After Effects</span>
-        <span class="tool-pill">Blender</span>
         <span class="tool-pill">Framer</span>
-        <span class="tool-pill">Notion</span>
       </div>
 
       <div class="about-label" style="margin-top: 32px;" data-i18n="about_label_services">Услуги</div>
@@ -198,7 +197,6 @@
         <li data-i18n="service_2">Проектирование UI/UX</li>
         <li data-i18n="service_3">Дизайн-системы и компоненты</li>
         <li data-i18n="service_4">Типографика и редизайн</li>
-        <li data-i18n="service_5">Моушн и анимация</li>
       </ul>
     </div>
   </div>
@@ -220,20 +218,22 @@
 <!-- Модальное окно портфолио -->
 <div id="portfolio-modal" aria-modal="true" role="dialog">
   <div class="modal-overlay" id="modal-overlay"></div>
-  <div class="modal-window" id="modal-window">
-    <button class="modal-close" id="modal-close" aria-label="Закрыть">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+  <div class="modal-shell" id="modal-shell">
     <button class="modal-nav prev" id="modal-prev" aria-label="Предыдущая работа">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
+    <div class="modal-window" id="modal-window">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-layout">
+        <div class="modal-media" id="modal-media"></div>
+        <div class="modal-content" id="modal-content"></div>
+      </div>
+    </div>
     <button class="modal-nav next" id="modal-next" aria-label="Следующая работа">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
-    <div class="modal-layout">
-      <div class="modal-media" id="modal-media"></div>
-      <div class="modal-content" id="modal-content"></div>
-    </div>
   </div>
 </div>
 
@@ -381,6 +381,12 @@
         </div>
         <div class="card-dim"></div>
         <div class="card-glow"></div>
+        <div class="card-hover-overlay">
+          <div class="card-hover-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="card-hover-label">${t('card_view_more') || 'View project'}</div>
+        </div>
         <div class="card-info">
           <div class="card-category">${categoryLabel(item.category)}</div>
           <div class="card-title">${projectText(item, 'title')}</div>
@@ -491,7 +497,7 @@
 
     modal.classList.remove('is-closing');
     modal.classList.add('active');
-    document.body.classList.add('no-scroll');
+    lockPageScroll();
   }
 
   function closeModal() {
@@ -499,7 +505,7 @@
     setTimeout(() => {
       modal.classList.remove('active');
       modal.classList.remove('is-closing');
-      document.body.classList.remove('no-scroll');
+      unlockPageScroll();
     }, 400);
   }
 
@@ -597,6 +603,28 @@
       triangle.style.opacity = '1';
       ring.style.opacity = '1';
     });
+
+    // Курсор увеличивается и ярче светится при наведении на интерактивные элементы (п.7 ТЗ)
+    const CURSOR_INTERACTIVE_SELECTOR = [
+      'a', 'button', '.portfolio-card', '.lang-item', '.connect-icon',
+      '.tool-pill', '.services-list li', '.portfolio-tab', '.modal-nav',
+      '.modal-close', '#back-to-top', '.burger-menu', '.theme-btn',
+      '.nav-link', '[role="button"]'
+    ].join(', ');
+
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(CURSOR_INTERACTIVE_SELECTOR)) {
+        triangle.classList.add('cursor-active');
+        ring.classList.add('cursor-active');
+      }
+    });
+    document.addEventListener('mouseout', e => {
+      const stillInteractive = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(CURSOR_INTERACTIVE_SELECTOR);
+      if (e.target.closest(CURSOR_INTERACTIVE_SELECTOR) && !stillInteractive) {
+        triangle.classList.remove('cursor-active');
+        ring.classList.remove('cursor-active');
+      }
+    });
   }
 
   // Обновленная кнопка «Наверх»
@@ -612,22 +640,55 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  /* ═══════════════════════════════════════════════
+      Блокировка прокрутки страницы (бургер-меню / модалка портфолио)
+      с сохранением позиции скролла, чтобы после закрытия страница
+      оставалась там же, где была открыта (п.4.2 ТЗ)
+  ═══════════════════════════════════════════════ */
+  let savedScrollY = 0;
+  let scrollLockCount = 0;
+
+  function lockPageScroll() {
+    if (scrollLockCount === 0) {
+      savedScrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.classList.add('no-scroll');
+    }
+    scrollLockCount++;
+  }
+
+  function unlockPageScroll() {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) {
+      document.body.classList.remove('no-scroll');
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY);
+    }
+  }
+
   // Мобильное меню (Бургер)
   const burgerBtn = document.getElementById('burger-btn');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link:not(.connect-trigger):not(.lang-trigger)');
 
   burgerBtn.addEventListener('click', () => {
+    const opening = !burgerBtn.classList.contains('active');
     burgerBtn.classList.toggle('active');
     navMenu.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
+    if (opening) {
+      lockPageScroll();
+    } else {
+      unlockPageScroll();
+    }
   });
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      burgerBtn.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+      if (burgerBtn.classList.contains('active')) {
+        burgerBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        unlockPageScroll();
+      }
     });
   });
 
@@ -698,7 +759,7 @@
       if (!connectContainer.matches(':hover')) {
         connectContainer.classList.remove('active');
       }
-    }, 300);
+    }, 200);
   });
 
   document.addEventListener('click', (e) => {
